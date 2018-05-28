@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    font-family: 'Calibri';
+}
+
+.centered {
+    margin: auto;
+    width: 60%;
+}
+
+#member{
+    height: 40px;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 30px;
+    
+}
+
+#member p {
+    margin: 0;
+    line-height: 2.5em;
+    font-family: 'Abel';
+    font-weight: bold;
+}
+
+#title {
+    margin-top: 40px;
+}
+
+#title, #underTitle {
+    font-family: 'Caveat', cursive;
+    font-size: 2.3em;
+    color: #457187;
+    text-align: center;
+}
+
+#title {
+    text-transform: uppercase;
+}
+
+#menu {
+    margin: auto;
+    display:block;
+    width: 600px;
+}
+
+#menu ul {
+    -webkit-padding-start:0px;
+}
+
+#menu li{
+    display: inline;
+    list-style-type: none;
+    
+}
+
+#menu li a{
+    display:inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-family: 'Calibri';
+    font-weight: bold;
+}
+
+#menu li a:hover {
+    color: #457187;
+}
+
+.separator {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70px;
+}
+
+#slider{
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+}
+
+#contenu {
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #1c1c1c;
+    color: #7d7d7d;
+    font-size: 0.9em;
+    padding-bottom: 20px;
+}
+
+footer h2 {
+    font-size: 0.1.5em;   
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.colonneFooter {
+    width: 35%;
+}
+
+.footerPartenaire {
+    max-width: 150px;
+}
+
+.titrePage {
+    text-align: center;
+}
+
+#listeAdherents {
+    display:flex;
+    flex-direction: vertical;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.adherent {
+    width: 25%;
+    padding: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #ececec;
+}
+
+.adherent h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.adherent p {
+    text-align: center;
+}
+
+.adherent img {
+    text-align: center;
+}
+
+#forum table  {
+    border-spacing: 7px;
+}
+
+#forum td {
+    padding: 10px;
+}
+
+#forum tr {
+    background-color: #ececec;
+    border: 5px solid white;
+}
+
+.colonneCategorie {
+    width: 80%;
+}
+
+.colonneNbTopics, .colonneDernierTopic {
+    text-align: center;
+}
+
+#forum h2 {
+    margin: 0;
+}
+
+#forum h2 a{
+    text-decoration: none;
+    color: #153159;
+}
+
+#forum h3 a{
+    text-decoration: none;
+    color: #153159;
+    font-size: 0.9em;
+}
+
+.post, #ajoutPost {
+    background-color: #ececec;
+    border: 5px solid white;  
+    padding: 20px;
+}
+
+.post table tr {
+    border: 5px solid white;    
+    margin: 10px;
+}
+
+.postedBy {
+    text-align: center;
+}
+
+.post h1, #ajoutPost h2 {
+    margin: 0;
+}
