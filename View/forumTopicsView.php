@@ -1,4 +1,7 @@
 <?php ob_start(); ?>
+<div class="titrePage">
+    <h1>Forum</h1>
+</div>
 <div id="forum">
     <table>
         <tr>

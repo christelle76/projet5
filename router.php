@@ -10,6 +10,7 @@ $memberController = new MemberController();
 $postController = new PostController();
 
 if($loginController->isConnected()) {
+    $postController->testAddPost();
     if (isset($_GET['page'])){
         switch ($_GET['page']) {
             case "accueil":
@@ -26,10 +27,10 @@ if($loginController->isConnected()) {
                 $memberController->contact();
                 break;
             case "forum":
+                
                 if(isset($_GET['categorie'])){
                     $memberController->forum_topics($_GET['categorie']);
                 } else if (isset($_GET['topic'])){
-                    $postController->testAddPost();
                     $memberController->forum_posts_member($_GET['topic']);
                 } else {
                     $memberController->forum_categories();

@@ -1,5 +1,9 @@
 <?php ob_start(); ?>
+<div class="titrePage">
+    <h1>Forum</h1>
+</div>
 <div id="posts">
+    <p><a href="index.php?page=forum&categorie=<?= $categorieId;?>"><?= $categorieName;?></a> / <?= $topicName;?></p>
     <?php foreach($posts as $post):?>
         <div class="post">
             <table>
@@ -17,10 +21,11 @@
     <?php endforeach;?>
     
     <div id="ajoutPost">
-        <h2>Ajouter un nouveau post</h2>
-        <form method="post" name="addPost" action="http://localhost/projet5/index.php?page=forum&topic=<?= $_GET['topic'];?>">
-            <textarea > </textarea><br/>
+        <h2>Ajouter un nouveau post :</h2>
+        <form method="post" name="addPost" action="index.php?page=forum&topic=<?= $_GET['topic'];?>">
+            <input type="text" name="content" placeholder="Ecrivez ici votre message">
             <input type="hidden" name="topic" value="<?= $_GET['topic'];?>">
+            <input type="hidden" name="user" value="<?= $_SESSION['id'];?>"><br/>
             <input type="submit" value="Envoyer">
         </form>
     </div>

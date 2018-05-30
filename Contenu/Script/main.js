@@ -1,4 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-	new Slider(0);
+	new Slider();
     new Car();
 })

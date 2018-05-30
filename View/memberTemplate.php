@@ -34,14 +34,15 @@
             </div>
         </div>
     </header>
-    <section id="slideshow">
+    <section id="slideContainer">
         <div id="slider1" class="mySlides">
-            <div id="logo"><img src="Contenu/Images/logoMoyen.png" alt="vieille voiture"></div>
-            <img src="Contenu/Images/slide2.jpg" alt="vieille voiture">
+            <img src="Contenu/Images/slide1.jpg" alt="vieille voiture">
         </div>
         <div id="slider2" class="mySlides">
-            <div id="logo"><img src="Contenu/Images/logoMoyen.png" alt="vieille voiture"></div>
-            <img alt="tuto" src="Contenu/Images/slide1.jpg" alt="vieille voiture">        
+            <img alt="tuto" src="Contenu/Images/slide2.jpg" alt="vieille voiture">        
+        </div>
+        <div id="logo">
+            <img src="Contenu/Images/logoMoyen.png" alt="vieille voiture">
         </div>
     </div>
     <div class="centered">
@@ -84,5 +85,7 @@
             <table>
         </div>
     </footer>
+    <script src="Contenu/Script/car.js"></script>
+    <script src="Contenu/Script/slider.js"></script>
     <script src="Contenu/Script/main.js"></script>
 </body>

@@ -48,6 +48,9 @@ class MemberController extends Modele {
 
     function forum_posts_member($id) {
         $this->forum = new Forum();
+        $categorieId = $this->forum->getCategorieId($id);
+        $categorieName = $this->forum->getCategorieName($id);
+        $topicName = $this->forum->getTopicName($id);
         $posts = $this->forum->getPosts($id);
         require_once('View\forumPostsMemberView.php');
         require 'View\memberTemplate.php';

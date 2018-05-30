@@ -15,10 +15,28 @@ class Forum extends Modele {
         return $categories;
     }
 
+    function getCategorieName($topic_id){
+        $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
+        //$categorieId->execute(array('topic_id'=>$topic_id));
+        $categorieName = $this->bdd->getBdd()->query("SELECT * FROM avbf_categories WHERE cat_id = " . $categorieId['topic_cat'] . "")->fetch();
+        return $categorieName['cat_name'];
+    }
+
+    function getCategorieId($topic_id){
+        $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
+        return $categorieId['topic_cat'];
+    }
+
     function getTopics($id_categories){
         $topics = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_topics WHERE topic_cat=:id_categories');
         $topics->execute(array('id_categories'=>$id_categories));
         return $topics;
+    }
+
+    function getTopicName($topic_id) {
+        $topicName = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
+        //$topicName->execute(array('id_topic'=>$id_topic));
+        return $topicName['topic_subject'];
     }
 
     function getPosts($id_topics){
@@ -33,9 +51,15 @@ class Forum extends Modele {
         return $numberTopic;
     }
 
-    function addPost($topic, $post) {
-        $post = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_posts WHERE post_topic= :topic, post_content= :post');
-        $post->execute(array('post'=>$post, 'topic'=>$topic));
+    function addPost($content, $date, $topic, $by) {
+        echo("je suis entrée ?");
+        $addPost = $this->bdd->getBdd()->prepare("INSERT INTO avbf_posts(post_content, post_date, post_topic, post_by) VALUES (:post_content, :post_date, :post_topic, :post_by)");
+        $addPost->execute(array(
+            'post_content'=>$content,
+            'post_date'=>$date,
+            'post_topic'=>$topic,
+            'post_by'=>$by,
+        ));
     }
 }
 ?>

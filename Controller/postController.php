@@ -11,10 +11,14 @@ class PostController extends Modele {
     }
 
     function testAddPost() {
-        if(isset($_POST['addPost'])) {
+        if(isset($_POST['content'])) {
             $addPost = new Forum;
-            $addPost->addPost($_POST['topic'], $_POST['addPost']);
+            $addPost->addPost($_POST['content'], currentdate(), $_POST['topic'], $_POST['user']);
         } 
+    }
+
+    function testFormContact() {
+
     }
 
     function testDisconnect() {
