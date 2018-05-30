@@ -2,17 +2,26 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>AVBF</title>
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+
   <link rel='stylesheet' href='Contenu/CSS/fullcalendar.css' />
-  <script src='Contenu/Lib/jquery.min.js'></script>
-    <script src='Contenu/Lib/moment.min.js'></script>
-    <script src="Contenu/Script/locale/fr.js"></script>
-    <script src='Contenu/Script/fullcalendar.js'></script>
-    <script src='Contenu/Script/calendar.js'></script>
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
   <link href="Contenu\CSS\style.css" type="text/css" rel="stylesheet">
+
+  <script src='Contenu/Lib/jquery.min.js'></script>
+  <script src='Contenu/Lib/moment.min.js'></script>
+  <script src="Contenu/Script/locale/fr.js"></script>
+  <script src='Contenu/Script/fullcalendar.js'></script>
+  <script src="Contenu/Script/bootstrap-datepicker.min.js"></script>
+  <script src="Contenu/Script/locales/bootstrap-datepicker.fr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="Contenu/Script/script.js"></script>
+  
 </head>
 <body>
     <header>
@@ -85,6 +94,7 @@
             <table>
         </div>
     </footer>
+    <script src='Contenu/Script/calendar.js'></script>
     <script src="Contenu/Script/car.js"></script>
     <script src="Contenu/Script/slider.js"></script>
     <script src="Contenu/Script/main.js"></script>

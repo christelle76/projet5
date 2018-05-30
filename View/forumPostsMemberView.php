@@ -9,7 +9,7 @@
             <table>
                 <tr>
                     <td class="postedBy">
-                        <h1><?= $_SESSION['username'];?></h1>
+                        <h1><?= $post['post_by'];?></h1>
                         <img src="Contenu/Images/users/avatar-1.png" alt="avatar">
                         <p>a posté le</p>
                         <p><?= $post['post_date'];?></p>
@@ -25,7 +25,7 @@
         <form method="post" name="addPost" action="index.php?page=forum&topic=<?= $_GET['topic'];?>">
             <input type="text" name="content" placeholder="Ecrivez ici votre message">
             <input type="hidden" name="topic" value="<?= $_GET['topic'];?>">
-            <input type="hidden" name="user" value="<?= $_SESSION['id'];?>"><br/>
+            <input type="hidden" name="user" value="<?= $_SESSION['username'];?>"><br/>
             <input type="submit" value="Envoyer">
         </form>
     </div>

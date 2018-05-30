@@ -9,7 +9,7 @@
             <table>
                 <tr>
                     <td class="postedBy">
-                        <h1><?= $_SESSION['id'];?></h1>
+                        <h1><?= $post['post_by'];?></h1>
                         <img src="Contenu/Images/users/avatar-1.png" alt="avatar">
                         <p>a posté le</p>
                         <p><?= $post['post_date'];?></p>
