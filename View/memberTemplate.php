@@ -17,7 +17,7 @@
 <body>
     <header>
         <div id="member">
-           <p> <form action="index.php" method="post"><input type="submit" value="Se déconnecter" name="disconnect"></input><form> - Bienvenue <?php echo $_SESSION['id'];?></p>
+           <p> <form action="index.php" method="post"><input type="submit" value="Se déconnecter" name="disconnect"></input><form> - Bienvenue <?php echo $_SESSION['username'];?></p>
         </div>
         <div class="centered">
             <div id="title">Anciennes voitures des blanches falaises</div>

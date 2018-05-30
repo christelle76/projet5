@@ -3,6 +3,7 @@
 require_once('Modele\modele.php');
 require_once('Modele\forum.php');
 require_once('Modele\adherents.php');
+require_once('Modele\users.php');
 
 class LoginController extends Modele {
 
@@ -11,19 +12,40 @@ class LoginController extends Modele {
     }
 
     function isConnected() {
-        if ($_SESSION['id']) {
+        if (isset($_SESSION['username'])) {
             return true;
         } else {
             return false;
         }
     }
 
-    function isPasswordCorrect($id, $password){
-        
+    function clearSession() {
+        unset($_SESSION['username']);
     }
 
-    function clearSession() {
-        unset($_SESSION['id']);
+    function hashPassword($password) {
+        $userPasswordHashed = md5(md5($password));
+        return $userPasswordHashed;
+    }
+
+    function connexionTest($username, $userPassword) {
+        $users = new Users();
+        $user = $users->getUser($username);
+
+        $isPasswordCorrect = ($this->hashPassword($userPassword) == $user['user_password']);
+        
+        require_once('Controller\memberController.php');
+        require_once('Controller\visitorController.php');
+
+        if($isPasswordCorrect){
+            $_SESSION['username'] = $username;
+            $memberController = new memberController();
+            $memberController->accueil();
+        } else {
+            $visitorController = new visitorController();
+            $visitorController->accueil(); 
+        }
+   
     }
 
 }

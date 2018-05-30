@@ -28,7 +28,7 @@ class MemberController extends Modele {
     }
 
     function contact() {
-        require_once('View\contactView.php');
+        require_once('View\contactMemberView.php');
         require 'View\memberTemplate.php';
     }
 
@@ -54,6 +54,11 @@ class MemberController extends Modele {
         $topicName = $this->forum->getTopicName($id);
         $posts = $this->forum->getPosts($id);
         require_once('View\forumPostsMemberView.php');
+        require 'View\memberTemplate.php';
+    }
+
+    function error() {
+        require_once('View\errorView.php');
         require 'View\memberTemplate.php';
     }
     

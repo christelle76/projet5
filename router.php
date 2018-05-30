@@ -10,6 +10,7 @@ $memberController = new MemberController();
 $postController = new PostController();
 
 if($loginController->isConnected()) {
+    $postController->testDisconnect();
     $postController->testAddPost();
     if (isset($_GET['page'])){
         switch ($_GET['page']) {
@@ -27,7 +28,6 @@ if($loginController->isConnected()) {
                 $memberController->contact();
                 break;
             case "forum":
-                
                 if(isset($_GET['categorie'])){
                     $memberController->forum_topics($_GET['categorie']);
                 } else if (isset($_GET['topic'])){
@@ -36,6 +36,8 @@ if($loginController->isConnected()) {
                     $memberController->forum_categories();
                 }
                 break;
+            case "":
+                $memberController->error();
             default:
                 echo "defaut";
         }
@@ -43,6 +45,7 @@ if($loginController->isConnected()) {
         $memberController->accueil();
     } 
 } else {
+    $postController->connexionTest();
     if (isset($_GET['page'])){
         switch ($_GET['page']) {
             case "accueil":
@@ -66,6 +69,8 @@ if($loginController->isConnected()) {
                     $visitorController->forum_categories();
                 }
                 break;
+            case "":
+                $visitorController->error();
             default:
                 echo "defaut";
         }

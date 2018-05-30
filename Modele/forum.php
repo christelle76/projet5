@@ -57,7 +57,6 @@ class Forum extends Modele {
     }
 
     function addPost($content, $date, $topic, $by) {
-        echo("je suis entrée ?");
         $addPost = $this->bdd->getBdd()->prepare("INSERT INTO avbf_posts(post_content, post_date, post_topic, post_by) VALUES (:post_content, :post_date, :post_topic, :post_by)");
         $addPost->execute(array(
             'post_content'=>$content,

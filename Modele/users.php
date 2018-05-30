@@ -2,6 +2,7 @@
 
 require_once "modele.php";
 
+
 class Users extends Modele {
 
     protected $bdd;
@@ -10,8 +11,9 @@ class Users extends Modele {
         $this->bdd = new Modele();
     }
 
-    function getUser($id){
-        $user = $this->bdd->getBdd()->query('SELECT * FROM avbf_users WHERE');
+    function getUser($username){
+        $user = $this->bdd->getBdd()->query("SELECT * FROM avbf_user WHERE user_pseudo='" . $username . "'")->fetch();
+        //$user->execute(array('id'=>$username));
         return $user;
     }
 
