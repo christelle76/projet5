@@ -3,7 +3,7 @@
     <h1>Forum</h1>
 </div>
 <div id="posts">
-    <p><a href="index.php?page=forum&categorie=<?= $categorieId;?>"><?= $categorieName;?></a> / <?= $topicName;?></p>
+    <p><a href="index.php?page=forum">Forum</a> / <a href="index.php?page=forum&categorie=<?= $categorieId;?>"><?= $categorieName;?></a> / <?= $topicName;?></p>
     <?php foreach($posts as $post):?>
         <div class="post">
             <table>

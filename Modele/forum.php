@@ -22,6 +22,11 @@ class Forum extends Modele {
         return $categorieName['cat_name'];
     }
 
+    function getCategorieNameWithCategorieId($cat_id){
+        $categorieName = $this->bdd->getBdd()->query("SELECT * FROM avbf_categories WHERE cat_id = " . $cat_id . "")->fetch();
+        return $categorieName['cat_name'];
+    }
+
     function getCategorieId($topic_id){
         $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
         return $categorieId['topic_cat'];

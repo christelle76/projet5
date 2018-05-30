@@ -3,6 +3,7 @@
     <h1>Forum</h1>
 </div>
 <div id="forum">
+<p><a href="index.php?page=forum">Forum</a> / <a href="index.php?page=forum&categorie=<?= $_GET['categorie'];?>"><?= $categorieName;?></a></p>
     <table>
         <tr>
             <td class="Topic"><b>Topics</b></td>
