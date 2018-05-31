@@ -16,8 +16,10 @@ class Forum extends Modele {
     }
 
     function getCategorieName($topic_id){
-        $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
+        $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id =" . $topic_id . "")->fetch();
         //$categorieId->execute(array('topic_id'=>$topic_id));
+        //$categorieId->fetchAll();
+        //var_dump($categorieId);
         $categorieName = $this->bdd->getBdd()->query("SELECT * FROM avbf_categories WHERE cat_id = " . $categorieId['topic_cat'] . "")->fetch();
         return $categorieName['cat_name'];
     }
