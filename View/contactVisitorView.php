@@ -13,7 +13,7 @@
     <form action="index.php" method="post">
     <input type="text" name="user_id" placeholder="Votre identifiant"/>
     <input type="password" name="user_password" placeholder="Votre mot de passe"/>
-    <input type="submit" value="Se connecter" name="connect"></input>
+    <input type="submit" class="submit" value="Se connecter" name="connect"></input>
     <form>
 </div>
 

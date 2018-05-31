@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>AVBF</title>
-  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
   <link rel='stylesheet' href='Contenu/CSS/fullcalendar.css' />
   <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
@@ -26,12 +29,13 @@
 <body>
     <header>
         <div id="member">
-           <p> <form action="index.php" method="post"><input type="submit" value="Se déconnecter" name="disconnect"></input><form> - Bienvenue <?php echo $_SESSION['username'];?></p>
+           <p> <form action="index.php" method="post">Bienvenue <?php echo $_SESSION['username'];?> -<input type="submit" class="submit "value="Se déconnecter" name="disconnect"></input><form></p>
         </div>
         <div class="centered">
             <div id="title">Anciennes voitures des blanches falaises</div>
-            <div id="underTitle">Association</div>
-            <div class="separator"><img src="Contenu/Images/separator.png" alt="vieille voiture"></div>
+
+            <?php require "separatorView.php"; ?><br/> 
+
             <div id="menu">
                 <ul>
                     <li class="menuItem"><a href="index.php">Accueil</a></li>
@@ -43,17 +47,9 @@
             </div>
         </div>
     </header>
-    <section id="slideContainer">
-        <div id="slider1" class="mySlides">
-            <img src="Contenu/Images/slide1.jpg" alt="vieille voiture">
-        </div>
-        <div id="slider2" class="mySlides">
-            <img alt="tuto" src="Contenu/Images/slide2.jpg" alt="vieille voiture">        
-        </div>
-        <div id="logo">
-            <img src="Contenu/Images/logoMoyen.png" alt="vieille voiture">
-        </div>
-    </div>
+
+    <?php require "sliderView.php"; ?>    
+
     <div class="centered">
         <div>
             <?php echo $contenu; ?>
@@ -61,37 +57,7 @@
     </div>
     <footer>
         <div class="centered">
-            <table>
-                <tr>
-                    <td class="colonneFooter">
-                        <h2>Siège</h2>
-                        <p>1 Route de Barville</p>
-                        <p>76450 CANY BARVILLE</p>
-                        <br/>
-                        <h2>Composition du Club</h2>
-                        <p>Nombre d’adhérents : 65</p>
-                        <p>Nombre de voitures : 170</p>
-                        <p>Montant de la cotisation annuelle = 45 Euros</p>
-                    </td>
-                    <td class="colonneFooter">
-                        <h2>Partenaires</h2>
-                        <table>
-                            <tr>
-                                <td class="footerPartenaire"><img src="Contenu/Images/partenaires/partenaire1.jpg" alt="partenaire france bleu"></td>
-                                <td class="footerPartenaire"><img src="Contenu/Images/partenaires/partenaire2.jpg" alt="partenaire ville cany barville"></td>
-                            </tr>
-                            <tr>
-                                <td class="footerPartenaire"><img src="Contenu/Images/partenaires/partenaire3.jpg" alt="partenaire rouen expertise automobile"></td>
-                                <td class="footerPartenaire"><img src="Contenu/Images/partenaires/partenaire4.jpg" alt="partenaire saucisson roches blanches"></td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td class="colonneFooter">
-                        <h2>Réseaux sociaux</h2>
-
-                    </td>
-                </tr>
-            <table>
+            <?php require "footerView.php"; ?>  
         </div>
     </footer>
     <script src='Contenu/Script/calendar.js'></script>

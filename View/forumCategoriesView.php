@@ -13,7 +13,7 @@
             <tr>
                 <td class="colonneCategorie">
                     <h2><a href="http://localhost/projet5/index.php?page=forum&categorie=<?= $categorie['cat_id'];?>"><?= $categorie['cat_name'];?></a></h2>
-                    <p><?= $categorie['cat_description'];?></p>
+                    <p><i class="fas fa-angle-double-right"></i></i> <?= $categorie['cat_description'];?></p>
                 </td>
                 <td class="colonneNbTopics">X</td>
             </tr>

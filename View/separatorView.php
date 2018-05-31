@@ -1,0 +1,1 @@
+<div class="separator"><img src="Contenu/Images/separator.png" alt="vieille voiture"></div><br/>
