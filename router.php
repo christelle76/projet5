@@ -11,6 +11,7 @@ $postController = new PostController();
 
 if($loginController->isConnected()) {
     $postController->testDisconnect();
+    
     $postController->testAddPost();
     if (isset($_GET['page'])){
         switch ($_GET['page']) {
@@ -25,6 +26,7 @@ if($loginController->isConnected()) {
                 $memberController->evenements();
                 break;
             case "contact":
+                $postController->testFormContact();
                 $memberController->contact();
                 break;
             case "forum":

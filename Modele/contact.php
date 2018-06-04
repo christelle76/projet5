@@ -11,11 +11,11 @@ class Contact extends Modele {
     }
 
     function sendMessage($subject, $message, $user){
-        $sendMessage = $this->bdd->getBdd()->query("INSERT INTO avbf_contact(contact_subject, contact_message, contact_user) VALUES (:contact_subject, :contact_message, :contact_user)");
-        $addPost->execute(array(
-            'post_content'=>$subject,
-            'post_date'=>$message,
-            'post_topic'=>$user,
+        $sendMessage = $this->bdd->getBdd()->prepare("INSERT INTO avbf_contact(contact_object, contact_message, contact_user) VALUES (:contact_subject, :contact_message, :contact_user)");
+        $sendMessage->execute(array(
+            'contact_subject'=>$subject,
+            'contact_message'=>$message,
+            'contact_user'=>$user,
         ));
     }
 

@@ -7,7 +7,7 @@
 <div id="listeAdherents">
     <?php foreach($cars as $car):?>
         <div class="adherent">
-            <h2><i class="fas fa-car"></i> <?= $car['car'];?></h1>
+            <h2><?= $car['car'];?></h1>
             <p><?= $car['year'];?></p>
             <img src="Contenu/Images/adherents/<?= $car['image'];?>"> 
         </div>

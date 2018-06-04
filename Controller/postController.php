@@ -23,7 +23,7 @@ class PostController extends Modele {
     function testFormContact() {
         if(isset($_POST['messageContact']) && $_POST['objectContact']) {
             $sendMessage = new Contact();
-            $sendMessage->sendMessage($_POST['objectContact'], $_POST['messageContact']);
+            $sendMessage->sendMessage($_POST['objectContact'], $_POST['messageContact'], $_SESSION['username']);
         } 
     }
 
