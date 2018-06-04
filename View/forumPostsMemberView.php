@@ -2,11 +2,12 @@
 <div class="titrePage">
     <h1>Forum</h1>
 </div>
+
 <div id="posts">
     <p><i class="fas fa-angle-double-right"></i> <a href="index.php?page=forum">Forum</a> / <a href="index.php?page=forum&categorie=<?= $categorieId;?>"><?= $categorieName;?></a> / <?= $topicName;?></p>
-    <?php foreach($posts as $post):?>
         <div class="post">
             <table>
+            <?php foreach($posts as $post):?>
                 <tr>
                     <td class="postedBy">
                         <h3><i class="far fa-user"></i> <?= $post['post_by'];?></h3>
@@ -17,9 +18,9 @@
                     </td>
                     <td class="messagePosted"><?= $post['post_content']; ?></td>
                 </tr>
+            <?php endforeach;?>
             </table>
         </div>
-    <?php endforeach;?>
     
     <div id="ajoutPost">
         <h3>Ajouter un nouveau post :</h3>

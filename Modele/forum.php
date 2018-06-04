@@ -16,22 +16,25 @@ class Forum extends Modele {
     }
 
     function getCategorieName($topic_id){
-        $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id =" . $topic_id . "")->fetch();
-        //$categorieId->execute(array('topic_id'=>$topic_id));
-        //$categorieId->fetchAll();
-        //var_dump($categorieId);
-        $categorieName = $this->bdd->getBdd()->query("SELECT * FROM avbf_categories WHERE cat_id = " . $categorieId['topic_cat'] . "")->fetch();
+        $categorieId = $this->bdd->getBdd()->prepare("SELECT * FROM avbf_topics WHERE topic_id =?");         
+        $categorieId->execute(array($topic_id));         
+        $c = $categorieId->fetch();
+        $categorieName = $this->bdd->getBdd()->query("SELECT * FROM avbf_categories WHERE cat_id = " . $c['topic_cat'] . "")->fetch();
         return $categorieName['cat_name'];
     }
 
     function getCategorieNameWithCategorieId($cat_id){
-        $categorieName = $this->bdd->getBdd()->query("SELECT * FROM avbf_categories WHERE cat_id = " . $cat_id . "")->fetch();
-        return $categorieName['cat_name'];
+        $categorieName = $this->bdd->getBdd()->prepare("SELECT * FROM avbf_categories WHERE cat_id =?");
+        $categorieName->execute(array($cat_id));
+        $catName = $categorieName->fetch();
+        return $catName['cat_name'];
     }
 
     function getCategorieId($topic_id){
-        $categorieId = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
-        return $categorieId['topic_cat'];
+        $categorieId = $this->bdd->getBdd()->prepare("SELECT * FROM avbf_topics WHERE topic_id =?");
+        $categorieId->execute(array($topic_id));
+        $catId = $categorieId->fetch();
+        return $catId['topic_cat'];
     }
 
     function getTopics($id_categories){
@@ -41,9 +44,10 @@ class Forum extends Modele {
     }
 
     function getTopicName($topic_id) {
-        $topicName = $this->bdd->getBdd()->query("SELECT * FROM avbf_topics WHERE topic_id = " . $topic_id . "")->fetch();
-        //$topicName->execute(array('id_topic'=>$id_topic));
-        return $topicName['topic_subject'];
+        $topicName = $this->bdd->getBdd()->prepare("SELECT * FROM avbf_topics WHERE topic_id =?");
+        $topicName->execute(array($topic_id));
+        $topName = $topicName->fetch();
+        return $topName['topic_subject'];
     }
 
     function getPosts($id_topics){

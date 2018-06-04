@@ -14,4 +14,4 @@
             <i class="fas fa-at"></i> <span class="pink">avbf@gmail.com</span></p>
         </td>
     </tr>
-<table>
+</table>

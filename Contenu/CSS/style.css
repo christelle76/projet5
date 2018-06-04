@@ -91,32 +91,27 @@ body {
     width: 70px;
 }
 
-#slideContainer {
-    position: relative;
-    display: block;
-    height: 300px;
+#slideshow {
+    min-width: 450px;
 }
 
-.mySlides {
-    position: absolute;
-    top: 0;
-    visibility: visible;
+#slideContainer {
+  position: relative;
 }
 
 #slideContainer:before {
-    display: block;
-    content: "";
-    
-    width: 30%;
-    padding-top: 34%;
+  display: block;
+  content: "";
+  width: 30%;
+  padding-top: 34%;
 }
 
 #slideContainer > .mySlides {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 #logo {
