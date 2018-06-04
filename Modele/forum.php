@@ -15,7 +15,6 @@ class Forum extends Modele {
         return $categories;
     }
     
-    //SELECT *  FROM news AS n, auteur AS a  WHERE n.id_auteur = a.id_auteur  AND nom="DUPONT"  AND prenom="Marchel"
     function countNumberTopics($cat_id){
         $select = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_categories AS cat, avbf_topics AS topic WHERE cat.' . $cat_id . ' = topic.topic_cat');
         $select->execute(array($cat_id));

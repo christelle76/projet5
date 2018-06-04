@@ -15,7 +15,7 @@
                     <h2><a href="http://localhost/projet5/index.php?page=forum&categorie=<?= $categorie['cat_id'];?>"><?= $categorie['cat_name'];?></a></h2>
                     <p><i class="fas fa-angle-double-right"></i> <?= $categorie['cat_description'];?></p>
                 </td>
-                <td class="colonneNbTopics"><?= $numberTopics;?><?= $categorie['cat_description'];?></td>
+                <td class="colonneNbTopics">X</td>
             </tr>
         <?php endforeach;?>
     </table>
