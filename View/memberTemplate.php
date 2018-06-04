@@ -29,7 +29,7 @@
 <body>
     <header>
         <div id="member">
-           <p> <form action="index.php" method="post">Bienvenue <?php echo $_SESSION['username'];?> -<input type="submit" class="submit "value="Se déconnecter" name="disconnect"></input><form></p>
+           <p> <form action="index.php" method="post">Bienvenue <?php echo $_SESSION['username'];?> -<input type="submit" class="submit "value="Se déconnecter" name="disconnect"></input></form></p>
         </div>
         <div class="centered">
             <div id="title">Anciennes voitures des blanches falaises</div>
@@ -55,11 +55,13 @@
             <?php echo $contenu; ?>
         </div>    
     </div>
+
     <footer>
         <div class="centered">
             <?php require "footerView.php"; ?>  
         </div>
     </footer>
+    
     <script src='Contenu/Script/calendar.js'></script>
     <script src="Contenu/Script/car.js"></script>
     <script src="Contenu/Script/slider.js"></script>
