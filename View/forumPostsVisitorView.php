@@ -2,23 +2,25 @@
 <div class="titrePage">
     <h1>Forum</h1>
 </div>
+
 <div id="posts">
-    <p><pan class="pink"><i class="fas fa-angle-double-right"></i></span> <a href="index.php?page=forum">Forum</a> / <a href="index.php?page=forum&categorie=<?= $categorieId;?>"><?= $categorieName;?></a> / <?= $topicName;?></p>
-    <?php foreach($posts as $post):?>
-        <div class="post">
-            <table>
-                <tr>
-                    <td class="postedBy">
-                        <h1><?= $post['post_by'];?></h1>
-                        <img src="Contenu/Images/users/avatar-1.png" alt="avatar">
-                        <p>a posté le</p>
-                        <p><?= $post['post_date'];?></p>
-                    </td>
-                    <td class="messagePosted"><?= $post['post_content']; ?></td>
-                </tr>
-            </table>
-        </div>
-    <?php endforeach;?>
+    <p><i class="fas fa-angle-double-right"></i> <a href="index.php?page=forum">Forum</a> / <a href="index.php?page=forum&categorie=<?= $categorieId;?>"><?= $categorieName;?></a> / <?= $topicName;?></p>
+    <div class="post">
+        <table>
+        <?php foreach($posts as $post):?>
+            <tr>
+                <td class="postedBy">
+                    <h2><span class="pink"><i class="far fa-user"></i> <?= $post['post_by'];?></span></h2>
+                    <img src="Contenu/Images/users/<?= $post['post_by'];?>.png" alt="avatar">
+                    <p>a posté le<br/>
+                    <p><?php $date = date_create($post['post_date']); echo date_format($date,'d-m-Y \à H:i:s');?><br/></p>
+                </td>
+                <td class="messagePosted"><?= $post['post_content']; ?></td>
+            </tr>
+        <?php endforeach;?>
+        </table>
+    </div>
+</div>  
     
     <div id="ajoutPost">
         <p><b>Connectez-vous pour pouvoir poster un message :</b></p>
