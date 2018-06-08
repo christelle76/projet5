@@ -21,7 +21,7 @@
   <script src="Contenu/Script/locale/fr.js"></script>
   <script src='Contenu/Script/fullcalendar.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/locale-all.js"></script>
-  <script src="Contenu/Script/bootstrap-datepicker.min.js"></script>
+  <script src="Contenu/Script/locales/bootstrap-datepicker.min.js"></script>
   <script src="Contenu/Script/locales/bootstrap-datepicker.fr.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="Contenu/Script/script.js"></script>

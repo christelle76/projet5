@@ -15,11 +15,26 @@ class Forum extends Modele {
         return $categories;
     }
     
-    function countNumberTopics($cat_id){
-        $select = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_categories AS cat, avbf_topics AS topic WHERE cat.' . $cat_id . ' = topic.topic_cat');
+    function getNumberTopics(){
+        $numberTopics = $this->bdd->getBdd()->query("SELECT topic_cat, count(*) as nb_post_by_cat FROM avbf_topics GROUP BY topic_cat")->fetchAll();
+        return $numberTopics;
+    }
+
+    function getNumberPosts() {
+        $numberPosts = $this->bdd->getBdd()->query("SELECT post_topic, count(*) as nb_post_by_topic FROM avbf_posts GROUP BY post_topic")->fetchAll();
+        return $numberPosts;
+    }
+
+    function getNumberTopicsWithCatId($cat_id){
+        $select = $this->bdd->getBdd()->prepare("SELECT * FROM avbf_topics WHERE topic_cat=?");
         $select->execute(array($cat_id));
-        $rowCount = $select->rowCount();
-        return $rowCount;
+        $numberTopics = $select->rowCount();
+        return $numberTopics;
+    }
+
+    function getNumberCategories() {
+        $numberCategories = $this->getCategories()->rowCount();
+        return $numberCategories;
     }
 
     function getCategorieName($topic_id){
@@ -61,6 +76,13 @@ class Forum extends Modele {
         $posts = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_posts WHERE post_topic=:id_topics');
         $posts->execute(array('id_topics'=>$id_topics));
         return $posts;
+    }
+
+    function getNumberPostsWithTopicId($topic_id){
+        $select = $this->bdd->getBdd()->prepare("SELECT * FROM avbf_posts WHERE post_topic =?");
+        $select->execute(array($topic_id));
+        $numberPosts = $select->rowCount();
+        return $numberPosts;
     }
 
     function countTopics($id_categories) {

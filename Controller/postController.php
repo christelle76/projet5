@@ -31,6 +31,9 @@ class PostController extends Modele {
         if(isset($_POST['disconnect'])) {
             unset($_SESSION['username']);
         } 
+        $loginController = new LoginController();
+        $loginController->isConnected();
+    
     }
 
     function connexionTest() {

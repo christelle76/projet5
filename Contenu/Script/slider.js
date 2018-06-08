@@ -1,30 +1,26 @@
 
 $(function(){
+    
     var slides = document.getElementsByClassName("mySlides");
-    var i = 0;
     initSlider();
 
     function initSlider() {
         var slides = document.getElementsByClassName("mySlides");
-        slides[i+1].style.visibility = "hidden";
+        var index = 0;
 
-        var timer = setInterval(function(){
-        
-            console.log("dfdfdf");
+        var timer = setInterval(function() {
+            var sliderLength = 1;
+            console.log(index);
+            slides[index].classList.toggle('visible');
+            index++;
 
-            if (i == this.sliderLength) {
-                slides[i].style.visibility = "hidden";
-                var i = 0;
-                slides[i].style.visibility = "visible";
+            if (index > sliderLength) {
                 console.log("1");
-            } else {
-                slides[i].style.visibility = "hidden";
-                i++;
-                slides[i].style.visibility = "visible";
-                console.log("2");
-            }
-   
-        }, 10000);
+                index = 0;
+            } 
+            slides[index].classList.toggle('visible');
+
+        }, 5000);
     }
 
 });

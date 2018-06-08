@@ -9,9 +9,10 @@ $visitorController = new VisitorController();
 $memberController = new MemberController();
 $postController = new PostController();
 
+$loginController->isConnected();
+$postController->testDisconnect();
+
 if($loginController->isConnected()) {
-    $postController->testDisconnect();
-    
     $postController->testAddPost();
     if (isset($_GET['page'])){
         switch ($_GET['page']) {
@@ -41,7 +42,7 @@ if($loginController->isConnected()) {
             case "":
                 $memberController->error();
             default:
-                echo "defaut";
+                $memberController->error();
         }
     } else {
         $memberController->accueil();
@@ -74,7 +75,7 @@ if($loginController->isConnected()) {
             case "":
                 $visitorController->error();
             default:
-                echo "defaut";
+                $visitorController->error();
         }
     } else {
         $visitorController->accueil();

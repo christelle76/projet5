@@ -1,7 +1,7 @@
 <section id="slideshow">
     <div id="slider">
         <div id="slideContainer">
-            <div id="slider1" class="mySlides">
+            <div id="slider1" class="mySlides visible">
                 <img src="Contenu/Images/slide1.jpg" alt="vieille voiture">
             </div>
             <div id="slider2" class="mySlides">
