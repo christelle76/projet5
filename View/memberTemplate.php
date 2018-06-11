@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="Contenu/CSS/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
   <link href="Contenu/CSS/style.css" type="text/css" rel="stylesheet">
+  <link href="Contenu/CSS/responsive.css" type="text/css" rel="stylesheet">
 
   <script src='Contenu/Lib/jquery.min.js'></script>
   <script src='Contenu/Lib/moment.min.js'></script>
