@@ -30,7 +30,7 @@
 <body>
     <header>
         <div id="member">
-           <p> <form action="index.php" method="post">Bienvenue <?php echo $_SESSION['username'];?> -<input type="submit" class="submit "value="Se déconnecter" name="disconnect"></input></form></p>
+           <form action="index.php" method="post">Bienvenue <?php echo $_SESSION['username'];?> -<input type="submit" class="submit "value="Se déconnecter" name="disconnect"></input></form>
         </div>
         <div class="centered">
             <div id="title">Anciennes voitures des blanches falaises</div>

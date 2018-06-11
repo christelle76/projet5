@@ -9,7 +9,7 @@
         <div class="adherent">
             <h2><?= $car['car'];?></h1>
             <p><?= $car['year'];?></p>
-            <img src="Contenu/Images/adherents/<?= $car['image'];?>"> 
+            <div class="img"><img src="Contenu/Images/adherents/<?= $car['image'];?>"></div> 
         </div>
     <?php endforeach; ?>
 </div>
