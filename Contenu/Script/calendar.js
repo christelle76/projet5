@@ -16,8 +16,8 @@ $(document).ready(function() {
     {
         id : 1,
         title  : 'Salon automobile',
-        start  : '2018-06-02T08:00',
-        end  : '2018-06-03T18:00',
+        start  : '2018-06-16T08:00',
+        end  : '2018-06-17T18:00',
         color  : 'red',
         description : 'Venez nous voir FDP !'
     }

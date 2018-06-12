@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 31 mai 2018 à 12:27
+-- Généré le :  mar. 12 juin 2018 à 13:29
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -80,11 +80,18 @@ INSERT INTO `avbf_categories` (`cat_id`, `cat_name`, `cat_description`) VALUES
 DROP TABLE IF EXISTS `avbf_contact`;
 CREATE TABLE IF NOT EXISTS `avbf_contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(255) NOT NULL,
-  `object` varchar(255) NOT NULL,
-  `message` varchar(255) NOT NULL,
+  `contact_user` varchar(255) NOT NULL,
+  `contact_object` varchar(255) NOT NULL,
+  `contact_message` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `avbf_contact`
+--
+
+INSERT INTO `avbf_contact` (`id`, `contact_user`, `contact_object`, `contact_message`) VALUES
+(1, 'christelle76', 'Bonjour', 'test contact 1');
 
 -- --------------------------------------------------------
 
@@ -100,16 +107,18 @@ CREATE TABLE IF NOT EXISTS `avbf_posts` (
   `post_topic` int(8) NOT NULL,
   `post_by` varchar(255) NOT NULL,
   PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `avbf_posts`
 --
 
 INSERT INTO `avbf_posts` (`post_id`, `post_content`, `post_date`, `post_topic`, `post_by`) VALUES
-(1, 'fgdfgg', '2018-05-19 18:37:08', 1, 'christelle76'),
-(2, 'gggg', '2018-05-30 13:49:18', 1, 'christelle76'),
-(4, 'bite !', '2018-05-30 19:10:38', 1, 'christelle76');
+(1, 'Bonjour, je suis nouvelle !', '2018-05-19 18:37:08', 1, 'christelle76'),
+(12, 'Allez voir nos belles voitures sur la page \"adhérents\" !', '2018-06-12 13:28:44', 3, 'christelle76'),
+(11, 'Une seule règle, la bonne humeur ! =)', '2018-06-12 13:28:04', 2, 'christelle76'),
+(9, 'Bienvenue à toi !', '2018-06-08 14:15:42', 1, 'user1'),
+(10, 'Bienvenue, amuse-toi bien ! =)', '2018-06-08 14:26:06', 1, 'user2');
 
 -- --------------------------------------------------------
 
@@ -123,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `avbf_topics` (
   `topic_subject` varchar(255) NOT NULL,
   `topic_date` datetime NOT NULL,
   `topic_cat` int(8) NOT NULL,
-  `topic_by` int(8) NOT NULL,
+  `topic_by` varchar(255) NOT NULL,
   PRIMARY KEY (`topic_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -132,9 +141,9 @@ CREATE TABLE IF NOT EXISTS `avbf_topics` (
 --
 
 INSERT INTO `avbf_topics` (`topic_id`, `topic_subject`, `topic_date`, `topic_cat`, `topic_by`) VALUES
-(1, 'Presentation', '2018-05-13 00:00:00', 1, 1),
-(2, 'Règles', '2018-05-13 23:05:03', 1, 1),
-(3, 'Nos adhérents', '2018-05-13 23:06:15', 2, 1);
+(1, 'Presentation', '2018-05-13 00:00:00', 1, 'christelle76'),
+(2, 'Règles', '2018-05-13 23:05:03', 1, 'christelle76'),
+(3, 'Nos adhérents', '2018-05-13 23:06:15', 2, 'christelle76');
 
 -- --------------------------------------------------------
 
