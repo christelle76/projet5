@@ -41,8 +41,6 @@ body {
     text-align: center;
 }
 
-
-
 #menu {
     margin: auto;
     display:block;
@@ -58,8 +56,13 @@ body {
     list-style-type: none; 
 }
 
-#menu li:hover {
+#menu li:hover{
     background-color: #457187;
+}
+
+#menu li:hover > a{
+    background-color: #457187;
+    color: #ffffff !important;
 }
 
 #menu a:hover {

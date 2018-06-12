@@ -31,9 +31,8 @@ class PostController extends Modele {
         if(isset($_POST['disconnect'])) {
             unset($_SESSION['username']);
         } 
-        $loginController = new LoginController();
-        $loginController->isConnected();
-    
+        // $loginController = new LoginController();
+        // $loginController->isConnected();
     }
 
     function connexionTest() {
@@ -41,6 +40,18 @@ class PostController extends Modele {
             $loginController = new LoginController();
             $loginController->connexionTest($_POST['user_id'], $_POST['user_password']);
         } 
+    }
+
+    function testCategorieExist($post){
+        $categorie = new Forum;
+        $result = $categorie->getCategoriesWithPOST($post);
+        return $result;
+    }
+
+    function testTopicExist($post){
+        $topic = new Forum;
+        $result = $topic->getTopicsWithPOST($post);
+        return $result;
     }
 
 }

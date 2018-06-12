@@ -32,9 +32,17 @@ if($loginController->isConnected()) {
                 break;
             case "forum":
                 if(isset($_GET['categorie'])){
-                    $memberController->forum_topics($_GET['categorie']);
+                    if(!empty($postController->testCategorieExist($_GET['categorie']))){
+                        $memberController->forum_topics($_GET['categorie']);
+                    } else {
+                        $memberController->error();
+                    }
                 } else if (isset($_GET['topic'])){
-                    $memberController->forum_posts_member($_GET['topic']);
+                    if(!empty($postController->testTopicExist($_GET['topic']))){
+                        $memberController->forum_posts_member($_GET['topic']);
+                    } else {
+                        $memberController->error();
+                    }
                 } else {
                     $memberController->forum_categories();
                 }

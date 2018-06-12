@@ -28,6 +28,11 @@ class LoginController extends Modele {
         return $userPasswordHashed;
     }
 
+    function connexionSucced() {
+        header("Location: index.php");
+        exit();
+    }
+
     function connexionTest($username, $userPassword) {
         $users = new Users();
         $user = $users->getUser($username);
@@ -39,8 +44,7 @@ class LoginController extends Modele {
 
         if($isPasswordCorrect){
             $_SESSION['username'] = $username;
-            $memberController = new memberController();
-            $memberController->accueil();
+            $this->connexionSucced();
         } else {
             $visitorController = new visitorController();
             $visitorController->accueil(); 

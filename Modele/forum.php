@@ -14,6 +14,20 @@ class Forum extends Modele {
         $categories = $this->bdd->getBdd()->query('SELECT * FROM avbf_categories'); 
         return $categories;
     }
+
+    function getCategoriesWithPOST($post){
+        $categorie = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_categories WHERE cat_id=?'); 
+        $categorie->execute(array($post));
+        $result = $categorie->fetchAll();
+        return $result;
+    }
+
+    function getTopicsWithPOST($post){
+        $topic = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_topics WHERE topic_id=?'); 
+        $topic->execute(array($post));
+        $result = $topic->fetchAll();
+        return $result;
+    }
     
     function getNumberTopics(){
         $numberTopics = $this->bdd->getBdd()->query("SELECT topic_cat, count(*) as nb_post_by_cat FROM avbf_topics GROUP BY topic_cat")->fetchAll();
