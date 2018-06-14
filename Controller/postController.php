@@ -17,6 +17,9 @@ class PostController extends Modele {
         if(isset($_POST['content']) && !empty($_POST['content'])) {
             $addPost = new Forum;
             $addPost->addPost(htmlspecialchars($_POST['content']), date("Y-m-d H:i:s"), $_POST['topic'], $_POST['user']);
+
+            header('Location: http://localhost/projet5/index.php?page=forum&topic=' . $_GET['topic'] .'');
+            exit;
         } 
     }
 
@@ -24,9 +27,12 @@ class PostController extends Modele {
         if(isset($_POST['messageContact']) && isset($_POST['objectContact']) && !empty($_POST['messageContact']) && !empty($_POST['objectContact'])) {
             $sendMessage = new Contact();
             $sendMessage->sendMessage(htmlspecialchars($_POST['objectContact']), htmlspecialchars($_POST['messageContact']), $_SESSION['username']);
+
+            header('Location: http://localhost/projet5/index.php?page=contact');
+            exit;
         } 
     }
-
+ 
     function testDisconnect() {
         if(isset($_POST['disconnect'])) {
             unset($_SESSION['username']);
