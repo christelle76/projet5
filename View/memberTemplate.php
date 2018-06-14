@@ -27,7 +27,6 @@
   <script src="Contenu/Script/locales/bootstrap-datepicker.min.js"></script>
   <script src="Contenu/Script/locales/bootstrap-datepicker.fr.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="Contenu/Script/script.js"></script>
   
 </head>
 <body>
@@ -67,6 +66,5 @@
     </footer>
     
     <script src='Contenu/Script/calendar.js'></script>
-    <script src="Contenu/Script/car.js"></script>
     <script src="Contenu/Script/slider.js"></script>
 </body>

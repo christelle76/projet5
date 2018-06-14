@@ -1,7 +1,7 @@
 
 $(function(){
     
-    var slides = document.getElementsByClassName("mySlides");
+    
     initSlider();
 
     function initSlider() {

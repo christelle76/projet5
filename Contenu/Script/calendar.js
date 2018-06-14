@@ -9,8 +9,8 @@ $(document).ready(function() {
       right:  'today month,agendaWeek,agendaDay' //aujourd'hui reste à sa place mais nous lui rajoutons trois boutons
   },
 
-  defaultView : 'agendaWeek', // vue par défaut sur l'agenda hebdomadaire
-  selectable: true, // on autorise la selection dans le calendrier
+  defaultView : 'agendaWeek', 
+  selectable: true, 
 
   events :[
     {
@@ -18,8 +18,7 @@ $(document).ready(function() {
         title  : 'Salon automobile',
         start  : '2018-06-16T08:00',
         end  : '2018-06-17T18:00',
-        color  : 'red',
-        description : 'Venez nous voir FDP !'
+        color  : 'red'
     }
     ]
 
