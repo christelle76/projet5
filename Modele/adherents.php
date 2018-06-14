@@ -1,6 +1,7 @@
 <?php
 
-require_once "modele.php";
+require_once './Autoloader.php';
+Autoloader::register();
 
 class Adherents extends Modele {
 

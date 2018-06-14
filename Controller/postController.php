@@ -1,11 +1,7 @@
 <?php
 
-require_once('Modele\modele.php');
-require_once('Modele\forum.php');
-require_once('Modele\users.php');
-require_once('Modele\contact.php');
-require_once('loginController.php');
-
+require_once './Autoloader.php';
+Autoloader::register();
 
 class PostController extends Modele {
 

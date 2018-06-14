@@ -1,8 +1,7 @@
 <?php
 
-require_once('Modele\modele.php');
-require_once('Modele\forum.php');
-require_once('Modele\adherents.php');
+require_once './Autoloader.php';
+Autoloader::register();
 
 class MemberController extends Modele {
 
@@ -43,13 +42,6 @@ class MemberController extends Modele {
             $newArray[$data['topic_cat']] = $data['nb_post_by_cat'] ;
         }
 
-        /*for($i = 0; $i < $NumberCatMax; $i++){
-            $newArray[$i]['cat_id'] = $categories[$i]['cat_id'];
-            $newArray[$i]['cat_name'] = $categories[$i]['cat_name'];
-            $newArray[$i]['cat_description'] = $categories[$i]['cat_description'];
-            $newArray[$i]['nb_topics'] = $this->forum->getNumberTopicsWithCatId($i);
-        }*/
-
         require_once('View\forumCategoriesView.php');
         require 'View\memberTemplate.php';
     }
@@ -72,7 +64,6 @@ class MemberController extends Modele {
 
     function forum_posts_member($id) {
         $this->forum = new Forum();
-        
         $categorieId = $this->forum->getCategorieId($id);
         $categorieName = $this->forum->getCategorieName($id);
         $topicName = $this->forum->getTopicName($id);

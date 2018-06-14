@@ -1,9 +1,7 @@
 <?php
 
-require_once('Modele\modele.php');
-require_once('Modele\forum.php');
-require_once('Modele\adherents.php');
-require_once('Modele\users.php');
+require_once './Autoloader.php';
+Autoloader::register();
 
 class LoginController extends Modele {
 
