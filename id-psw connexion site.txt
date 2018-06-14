@@ -1,0 +1,6 @@
+Pour chaque utilisateur le password correspond à l'identifiant
+
+Id : christelle76 - Password : christelle76
+Id: user1 - Password : user1
+Id: user2 - Password : user2
+Id: user3 - Password : user3
