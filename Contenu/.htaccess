@@ -1,0 +1,4 @@
+AuthUserFile "D:\wamp64\www\projet5\Contenu\.htpasswd"
+AuthName "Accès protégé"
+AuthType "Basic"
+Require valid-user

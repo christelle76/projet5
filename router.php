@@ -9,9 +9,9 @@ $visitorController = new VisitorController();
 $memberController = new MemberController();
 $postController = new PostController();
 
+$postController->testFormContact();
 $loginController->isConnected();
 $postController->testDisconnect();
-$postController->testFormContact();
 $postController->testAddPost();
 
 if($loginController->isConnected()) {
