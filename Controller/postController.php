@@ -14,16 +14,16 @@ class PostController extends Modele {
     }
 
     function testAddPost() {
-        if(isset($_POST['content'])) {
+        if(isset($_POST['content']) && !empty($_POST['content'])) {
             $addPost = new Forum;
-            $addPost->addPost($_POST['content'], date("Y-m-d H:i:s"), $_POST['topic'], $_POST['user']);
+            $addPost->addPost(htmlspecialchars($_POST['content']), date("Y-m-d H:i:s"), $_POST['topic'], $_POST['user']);
         } 
     }
 
     function testFormContact() {
-        if(isset($_POST['messageContact']) && $_POST['objectContact']) {
+        if(isset($_POST['messageContact']) && isset($_POST['objectContact']) && !empty($_POST['messageContact']) && !empty($_POST['objectContact'])) {
             $sendMessage = new Contact();
-            $sendMessage->sendMessage($_POST['objectContact'], $_POST['messageContact'], $_SESSION['username']);
+            $sendMessage->sendMessage(htmlspecialchars($_POST['objectContact']), htmlspecialchars($_POST['messageContact']), $_SESSION['username']);
         } 
     }
 
@@ -38,7 +38,7 @@ class PostController extends Modele {
     function connexionTest() {
         if(isset($_POST['user_id']) && isset($_POST['user_password'])) {
             $loginController = new LoginController();
-            $loginController->connexionTest($_POST['user_id'], $_POST['user_password']);
+            $loginController->connexionTest(htmlspecialchars($_POST['user_id']), htmlspecialchars($_POST['user_password']));
         } 
     }
 
