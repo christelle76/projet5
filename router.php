@@ -1,8 +1,12 @@
 <?php
+
 require_once('Controller\loginController.php');
 require_once('Controller\visitorController.php');
 require_once('Controller\memberController.php');
 require_once('Controller\postController.php');
+
+// require_once 'Autoloader.php';
+// Autoloader::register();
 
 $loginController = new LoginController();
 $visitorController = new VisitorController();
@@ -13,6 +17,8 @@ $postController->testFormContact();
 $loginController->isConnected();
 $postController->testDisconnect();
 $postController->testAddPost();
+$postController->testDeletePost();
+$postController->testEditPost();
 
 if($loginController->isConnected()) {
     if (isset($_GET['page'])){

@@ -1,7 +1,10 @@
 <?php
 
-require_once './Autoloader.php';
-Autoloader::register();
+require_once('Modele\modele.php');
+require_once('Modele\forum.php');
+require_once('Modele\users.php');
+require_once('Modele\contact.php');
+require_once('loginController.php');
 
 class PostController extends Modele {
 
@@ -17,6 +20,21 @@ class PostController extends Modele {
             header('Location: http://localhost/projet5/index.php?page=forum&topic=' . $_GET['topic'] .'');
             exit;
         } 
+    }
+
+    function testEditPost() {
+            
+        }
+
+    function testDeletePost() {
+        if(isset($_POST['deletePost'])){
+            $deletePost = new Forum();
+            $deletePost->deletePost($_POST['postId']);   
+
+            header('Location: http://localhost/projet5/index.php?page=forum&topic=' . $_GET['topic'] .'');
+            exit;
+        }
+        
     }
 
     function testFormContact() {
@@ -43,6 +61,8 @@ class PostController extends Modele {
             $loginController->connexionTest(htmlspecialchars($_POST['user_id']), htmlspecialchars($_POST['user_password']));
         } 
     }
+
+    
 
     function testCategorieExist($post){
         $categorie = new Forum;

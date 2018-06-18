@@ -1,7 +1,6 @@
 <?php
 
-require_once './Autoloader.php';
-Autoloader::register();
+require_once "modele.php";
 
 class Forum extends Modele {
 
@@ -75,7 +74,7 @@ class Forum extends Modele {
     }
 
     function getTopics($id_categories){
-        $topics = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_topics WHERE topic_cat=:id_categories');
+        $topics = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_topics WHERE topic_cat=:id_categories ORDER BY topic_date ASC');
         $topics->execute(array('id_categories'=>$id_categories));
         return $topics;
     }
@@ -88,7 +87,7 @@ class Forum extends Modele {
     }
 
     function getPosts($id_topics){
-        $posts = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_posts WHERE post_topic=:id_topics');
+        $posts = $this->bdd->getBdd()->prepare('SELECT * FROM avbf_posts WHERE post_topic=:id_topics ORDER BY post_date ASC');
         $posts->execute(array('id_topics'=>$id_topics));
         return $posts;
     }
@@ -114,6 +113,20 @@ class Forum extends Modele {
             'post_topic'=>$topic,
             'post_by'=>$by,
         ));
+    }
+
+    function editPost ($post_id, $post_content, $post_date) {
+        $editPost = $this->bdd->getBdd()->prepare("UPDATE avbf_posts SET post_content=:post_content, post_date=:post_date WHERE post_id=:post_id)");
+        $editPost->execute(array(
+            'post_id'=>$post_id,
+            'post_content'=>$post_content,
+            'post_date'=>$post_date,
+        ));
+    }
+
+    function deletePost($post_id) {
+        $deletePost = $this->bdd->getBdd()->prepare('DELETE FROM avbf_posts WHERE post_id=:post_id');
+        $deletePost->execute(array('post_id'=>$post_id));
     }
 }
 ?>

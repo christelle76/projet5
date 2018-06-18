@@ -1,8 +1,8 @@
 <?php
 
-require_once './Autoloader.php';
-Autoloader::register();
-
+require_once('Modele\modele.php');
+require_once('Modele\forum.php');
+require_once('Modele\adherents.php');
 
 class VisitorController extends Modele {
 

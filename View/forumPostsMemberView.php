@@ -14,6 +14,10 @@
                     <img src="Contenu/Images/users/<?= $post['post_by'];?>.png" alt="avatar">
                     <p>a posté le<br/>
                     <p><?php $date = date_create($post['post_date']); echo date_format($date,'d-m-Y \à H:i:s');?><br/></p>
+                    <?php if($_SESSION['username'] == $post['post_by']) {?>
+                    <form method="post" action="index.php?page=forum&topics=<?= $post['post_topic'] ;?>"><input type="hidden" name="postId" value="<?= $post['post_id'];?>"><i class="fas fa-trash-alt"></i> <input type="submit" class="liensPost" name="deletePost" value="Supprimer mon post"> </form>
+                    <?php }?>
+                    
                 </td>
                 <td class="messagePosted"><?= $post['post_content']; ?></td>
             </tr>

@@ -124,7 +124,6 @@ body {
   visibility: hidden;
 }
 
-
 .visible {
     visibility: visible !important;
     -webkit-animation: fadeinout 5s ease-in-out forwards;
@@ -258,6 +257,15 @@ p .description {
     min-height: 150px;
 }
 
+.liensPost, .liensPost a {
+    text-decoration: none;
+    background-color: #dedede;
+    border:0;
+    padding:0;
+    color: #316672;
+    font-weight: bold;
+}
+
 #sujetContact{
     height: 30px;
     border:1;
@@ -343,8 +351,6 @@ p .description {
     border: 20px solid #ececec;
 
 }
-
-
 
 #posts table .messagePosted {
     width: 75%;

@@ -1,7 +1,8 @@
 <?php
 
-require_once './Autoloader.php';
-Autoloader::register();
+require_once('Modele\modele.php');
+require_once('Modele\forum.php');
+require_once('Modele\adherents.php');
 
 class MemberController extends Modele {
 
@@ -69,6 +70,11 @@ class MemberController extends Modele {
         $topicName = $this->forum->getTopicName($id);
         $posts = $this->forum->getPosts($id);
         require_once('View\forumPostsMemberView.php');
+        require 'View\memberTemplate.php';
+    }
+
+    function forum_edit_post($post_id){
+        require_once('View\forumEditPostView.php');
         require 'View\memberTemplate.php';
     }
 

@@ -1,7 +1,6 @@
 <?php
 
-require_once './Autoloader.php';
-Autoloader::register();
+require_once "modele.php";
 
 class Users extends Modele {
 
